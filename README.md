@@ -3,7 +3,28 @@ A small JavaScript library for doing precise floating point maths
 
 Sure, there are many maths libraries to tickle your fancy, but sometimes you just need proper floating point maths and nothing more, that's why this library exists.
 
+## Install
+
+### Node/React
+
+```bash
+npm install decimath
+```
+
+```bash
+yarn add decimath
+```
+
+### Browser
+
+Just copy and link to the file or include it in your scripts.
+
 ## Usage
+
+Node Only:
+```js
+import BigNumber from 'decimath';
+```
 
 You'll need a `BigNumber` to make use of this. To make a new Big Number Use the following:
 
@@ -52,6 +73,10 @@ bn.pow(30); // bn to the power of 30
 ## Using calculated values outside of the library
 
 Use `.valueOf()` to get the JS decimal version of the number
+
+## Used By
+
+[![](https://nftm.art/images/decorative/general/nftmart_wide_light_logo/onesize.png)](https://nftm.art)
 
 ## Live Preview
 
