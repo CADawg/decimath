@@ -1,6 +1,6 @@
 {
   "name": "decimath",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small, Simple library for Precise Decimal Calculations",
   "main": "decimath.js",
   "scripts": {
