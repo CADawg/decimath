@@ -1,0 +1,24 @@
+{
+  "name": "decimath",
+  "version": "1.0.0",
+  "description": "Small, Simple library for Precise Decimal Calculations",
+  "main": "decimath.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snaddyvitch-Dispenser/decimath.git"
+  },
+  "keywords": [
+    "decimals",
+    "math",
+    "maths"
+  ],
+  "author": "CADawg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Snaddyvitch-Dispenser/decimath/issues"
+  },
+  "homepage": "https://github.com/Snaddyvitch-Dispenser/decimath#readme"
+}

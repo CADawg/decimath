@@ -10,7 +10,7 @@ class BigNumberClass {
 
   static fromNumber(number) {
     let power = 0;
-    while (number % 1 != 0) {
+    while (number % 1 !== 0) {
       power++;
       number = number * 10;
     }
@@ -120,4 +120,14 @@ class BigNumberClass {
 
 function BigNumber(number) {
   return BigNumberClass.fromNumber(number);
+}
+
+// Export for browser and node/react
+if (typeof exports !== 'undefined') {
+  if (typeof module !== 'undefined' && module.exports) {
+    exports = module.exports = BigNumber;
+  }
+  exports.BigNumber = BigNumber;
+} else {
+  root['BigNumber'] = BigNumber;
 }
