@@ -114,7 +114,7 @@ class BigNumberClass {
   }
 
   toString() {
-    return this.valueOf();
+    return this.valueOf().toString();
   }
 }
 
