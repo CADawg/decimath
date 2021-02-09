@@ -9,13 +9,26 @@ class BigNumberClass {
   }
 
   static fromNumber(number) {
-    let power = 0;
-    while (number % 1 !== 0) {
-      power++;
-      number = number * 10;
+    if (number instanceof BigNumberClass) return number;
+    if (number instanceof String || typeof number === "string") {
+      number = Number(number);
     }
 
-    return new BigNumberClass(number, power);
+    let power = getPowerRequiredToMakeWhole(number);
+
+    let bigNumber = new BigNumberClass(number * (10 ** power), power);
+
+    if (bigNumber.valueOf() !== number) {
+      // Attempt Repair
+      bigNumber.forgetAfterPrecision(number.toString().replace(/[^0-9]/g, '').length);
+    }
+
+    return bigNumber;
+  }
+
+  forgetAfterPrecision(precision) {
+    this.integer = this.integer.toPrecision(precision);
+    this.tidyZeros();
   }
 
   setPower(power) {
@@ -118,8 +131,24 @@ class BigNumberClass {
   }
 }
 
+function getPowerRequiredToMakeWhole(number) {
+  number = number.toString();
+  number = number.split(".");
+  if (number.length > 1) {
+    return number[1].length;
+  } else {
+    return 0;
+  }
+}
+
 function BigNumber(number) {
-  return BigNumberClass.fromNumber(number);
+  let bigNumber = BigNumberClass.fromNumber(number);
+  console.log(bigNumber);
+  if (bigNumber.valueOf() !== number) {
+    throw new Error("This number wasn't cast properly. This is a problem with Decimath. Please Report it Here: https://github.com/Snaddyvitch-Dispenser/decimath/issues");
+  }
+
+  return bigNumber;
 }
 
 // Export for browser and node/react
