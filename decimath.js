@@ -144,7 +144,7 @@ function getPowerRequiredToMakeWhole(number) {
 function BigNumber(number) {
   let bigNumber = BigNumberClass.fromNumber(number);
   console.log(bigNumber);
-  if (bigNumber.valueOf() !== number) {
+  if (bigNumber.valueOf() != number) {
     throw new Error("This number wasn't cast properly. This is a problem with Decimath. Please Report it Here: https://github.com/Snaddyvitch-Dispenser/decimath/issues");
   }
 
